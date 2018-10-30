@@ -7,7 +7,7 @@
 		</encoder>
 	</appender>
 
-	<logger name="net.mk" level="DEBUG" additivity = "false">
+	<logger name="net.mk" level="INFO" additivity = "false">
 		<appender-ref ref="consoleAppender" />
 	</logger>
 	<root level="INFO">

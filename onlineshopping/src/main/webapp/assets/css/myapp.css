@@ -79,3 +79,11 @@ footer {
 	width: 100px;
 	height: 100px;
 }
+
+.panel-heading {
+	color: #ff0000;
+}
+
+.help-block{
+	color: #ff0000;
+}
