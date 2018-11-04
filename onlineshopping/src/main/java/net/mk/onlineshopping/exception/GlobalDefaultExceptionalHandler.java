@@ -29,8 +29,7 @@ public class GlobalDefaultExceptionalHandler {
 		mv.addObject("errorTitle", "Product Not Availabe");
 		mv.addObject("errorDescription", "The product  your are lookin is not avaible right now");
 		mv.addObject("title", "Product unavialble");
-		
-		
+
 		return mv;
 		
 	}

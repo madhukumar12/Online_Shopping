@@ -38,14 +38,7 @@ public class Category {
 		this.name = name;
 	}
 
-	public String getDescripton() {
-		return this.description;
-	}
-
-	public void setDescripton(String descripton) {
-		this.description = descripton;
-	}
-
+	
 	public String getImageURL() {
 		return this.imageURL;
 	}
@@ -60,6 +53,15 @@ public class Category {
 
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+	
+	
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	@Override

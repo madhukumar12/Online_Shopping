@@ -87,7 +87,7 @@ public class CategoryTestCase {
 
 		category = new Category();
 		category.setName("Laptop");
-		category.setDescripton("This is a laptop category");
+		category.setDescription("This is a laptop category");
 		category.setImageURL("CAT_1.png");
 
 		assertEquals("Successfully added a category inside the table!", true, categoryDAO.add(category));
@@ -95,7 +95,7 @@ public class CategoryTestCase {
 		category = new Category();
 
 		category.setName("Televison");
-		category.setDescripton("This is a television category");
+		category.setDescription("This is a television category");
 		category.setImageURL("CAT_2.png");
 
 		assertEquals("Successfully added a category inside the table!", true, categoryDAO.add(category));
@@ -103,7 +103,7 @@ public class CategoryTestCase {
 		category = new Category();
 
 		category.setName("Mobile");
-		category.setDescripton("This is a television category");
+		category.setDescription("This is a television category");
 		category.setImageURL("CAT_3.png");
 
 		assertEquals("Successfully added a category inside the table!", true, categoryDAO.add(category));

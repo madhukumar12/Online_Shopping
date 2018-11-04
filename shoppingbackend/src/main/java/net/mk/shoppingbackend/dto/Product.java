@@ -34,7 +34,6 @@ public class Product {
 	private double unitprice;
 	private int quantity;
 	@Column(name = "is_active")
-	@JsonIgnore
 	private boolean active;
 	@JsonIgnore
 	@Column(name = "category_id")
@@ -85,6 +84,7 @@ public class Product {
 		this.name = name;
 	}
 
+	
 	public String getDescription() {
 		return description;
 	}

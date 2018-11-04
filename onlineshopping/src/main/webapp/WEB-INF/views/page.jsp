@@ -79,7 +79,7 @@
 			</c:if>
 			
 			<!-- Load only when user clicks Manage Products -->
-			<c:if test="${userClicksManageProducsts == true }">
+			<c:if test="${userClicksManageProducts == true }">
 				<%@include file="manageProducts.jsp"%>
 			</c:if>
 			
@@ -96,6 +96,9 @@
 		<!-- jQuery -->
 		<script src="${js}/jquery.js"></script>
 
+		<!-- jQuery Validator -->
+		<script src="${js}/jquery.validate.js"></script>
+
 
 		<!-- Bootstrap Core JavaScript -->
 		<script src="${js}/bootstrap.min.js"></script>
@@ -106,7 +109,8 @@
 		<!-- Data table Bootstrap -->
 		<script src="${js}/dataTables.bootstrap.js"></script>
 
-
+		<!-- Bootbox -->
+		<script src="${js}/bootbox.min.js"></script>
 		<!-- Self coded javascript -->
 		<script src="${js}/myapp.js"></script>
 
