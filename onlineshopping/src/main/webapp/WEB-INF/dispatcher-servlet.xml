@@ -1,12 +1,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
 	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:wf="http://www.springframework.org/schema/webflow-config"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd
 		http://www.springframework.org/schema/beans
 		 http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context 
 		http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/webflow-config
+		http://www.springframework.org/schema/webflow-config/spring-webflow-config.xsd
+				
 		">
 
 	<context:component-scan
@@ -23,12 +27,17 @@
 
 	</bean>
 	<bean id="multipartResolver"
-		class="org.springframework.web.multipart.support.StandardServletMultipartResolver"/>
+		class="org.springframework.web.multipart.support.StandardServletMultipartResolver" />
 
 
 	<!-- Loading static resources -->
 	<mvc:annotation-driven />
 	<mvc:resources location="/assets/"
 		mapping="/resources/**" />
+		
+	<!-- WEBFLOW CONFIGURATION -->
+	<!-- Entry point for the flow -->
+	
+	<wf:flow-executor id="flowExecutor"/>
 
 </beans>

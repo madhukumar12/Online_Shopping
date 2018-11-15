@@ -28,7 +28,7 @@ public class HibernateConfig {
 	public DataSource getDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
 
-		// Database Connection infomation
+		// Database Connection information
 		dataSource.setDriverClassName(DATABASE_DRIVER);
 		dataSource.setUrl(DATABASE_URL);
 		dataSource.setUsername(DATABASE_USERNAME);
@@ -57,7 +57,7 @@ public class HibernateConfig {
 		properties.put("hibernate.dialect", DATABASE_DIALECT);
 		properties.put("hibernate.show_sql", "true");
 		properties.put("hibernate.format_sql", "true");
-
+		properties.put("hibernate.hbm2ddl.auto", "update");
 		return properties;
 	}
 
