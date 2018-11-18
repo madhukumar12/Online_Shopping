@@ -1,5 +1,7 @@
 package net.mk.shoppingbackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,29 +9,40 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import org.hibernate.validator.constraints.NotBlank;
+
 @Entity
-public class Address {
+public class Address implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
+
 	@ManyToOne
 	private User user;
-	
+
 	@Column(name = "address_line_one")
+	@NotBlank(message = "Please enter the address line one!")
 	private String addressLineOne;
 	@Column(name = "address_line_two")
+	@NotBlank(message = "Please enter the address line two")
 	private String addressLineTwo;
+	@NotBlank(message = "Please enter the City name")
 	private String city;
+	@NotBlank(message = "Please enter the state name!")
 	private String state;
+	@NotBlank(message = "Please enter the country name!")
 	private String country;
 	@Column(name = "postal_code")
+	@NotBlank(message = "Please enter the Postal Code!")
 	private String postalCode;
 	private boolean shipping;
 	private boolean billing;
-	
-	
 
 	public User getUser() {
 		return user;
@@ -47,7 +60,6 @@ public class Address {
 		this.id = id;
 	}
 
-	
 	public String getAddressLineOne() {
 		return addressLineOne;
 	}

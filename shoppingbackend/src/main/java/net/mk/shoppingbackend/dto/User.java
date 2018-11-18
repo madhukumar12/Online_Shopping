@@ -1,5 +1,7 @@
 package net.mk.shoppingbackend.dto;
 
+import java.io.Serializable;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,28 +9,45 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Transient;
+
+import org.hibernate.validator.constraints.NotBlank;
 
 @Entity
-public class User {
+public class User implements Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@Column(name = "first_name")
+	@NotBlank(message = "Please enter the first name!")
 	private String firstName;
+	@NotBlank(message = "Please enter the last name!")
 	@Column(name = "last_name")
 	private String lastName;
+
+	@NotBlank(message = "Please enter the email address")
 	private String email;
+
 	@Column(name = "contact_number")
+	@NotBlank(message = "Please enter the contact number!")
 	private String contactNumber;
 	private String role;
+
+	@NotBlank(message = "Please enter the Password!")
 	private String password;
 	private boolean enabled = true;
-	
-	@OneToOne(mappedBy = "user", cascade=CascadeType.ALL)
+
+	// Confirm password transient password
+	@Transient
+	private String confirmPassword;
+
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL)
 	private Cart cart;
-	
-	
 
 	public Cart getCart() {
 		return cart;
@@ -100,6 +119,14 @@ public class User {
 
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+
+	public void setConfirmPassword(String confirmPassword) {
+		this.confirmPassword = confirmPassword;
 	}
 
 	@Override

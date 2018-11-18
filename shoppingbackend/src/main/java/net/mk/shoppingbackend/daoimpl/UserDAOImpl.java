@@ -1,5 +1,6 @@
 package net.mk.shoppingbackend.daoimpl;
 
+import java.io.Serializable;
 import java.util.List;
 
 import org.hibernate.HibernateException;
@@ -15,8 +16,12 @@ import net.mk.shoppingbackend.dto.User;
 
 @Repository("userDAO")
 @Transactional
-public class UserDAOImpl implements UserDAO {
+public class UserDAOImpl implements UserDAO, Serializable  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Autowired
 	private SessionFactory sessionFactory;
 
