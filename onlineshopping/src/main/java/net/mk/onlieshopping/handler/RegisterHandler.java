@@ -1,10 +1,12 @@
 package net.mk.onlieshopping.handler;
 
+
 import java.io.Serializable;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.binding.message.MessageBuilder;
 import org.springframework.binding.message.MessageContext;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import net.mk.onlieshopping.model.RegisterModel;
@@ -13,16 +15,24 @@ import net.mk.shoppingbackend.dto.Address;
 import net.mk.shoppingbackend.dto.Cart;
 import net.mk.shoppingbackend.dto.User;
 
-@Component
-public class RegisterHandler implements Serializable {
+@Component 
+class RegisterHandler implements Serializable{
 
-	@Autowired
-	private UserDAO userDAO;
-
+	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
+
+	@Autowired
+	private UserDAO userDAO;
+	
+	@Autowired
+	private transient BCryptPasswordEncoder passwordEncoder;
+
+	/**
+	 * 
+	 */
 
 	public RegisterModel init() {
 		return new RegisterModel();
@@ -74,6 +84,10 @@ public class RegisterHandler implements Serializable {
 			cart.setUser(user);
 			user.setCart(cart);
 		}
+		
+		// encode the password
+		
+		user.setPassword(passwordEncoder.encode(user.getPassword()));
 
 		// save the user
 		userDAO.addUser(user);

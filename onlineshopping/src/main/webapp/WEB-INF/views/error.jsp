@@ -12,6 +12,7 @@
 <html lang="en">
 
 <head>
+	<link rel='shortcut icon' href="https://img.icons8.com/nolan/50/000000/shopping-cart.png" />
 
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">

@@ -15,8 +15,6 @@
 
 	<context:component-scan
 		base-package="net.mk.onlineshopping" />
-	<context:component-scan
-		base-package="net.mk.shoppingbackend" />
 
 
 	<bean id="viewResolver"

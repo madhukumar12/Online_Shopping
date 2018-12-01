@@ -2,13 +2,11 @@
 <flow xmlns="http://www.springframework.org/schema/webflow"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/webflow
- http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+        http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
 
-
-	<var name="user" class="net.mk.shoppingbackend.dto.User" />
+		<var name="user" class="net.mk.shoppingbackend.dto.User" />
 	<var name="billing" class="net.mk.shoppingbackend.dto.Address" />
-	<var name="registerHandler"
-		class="net.mk.onlieshopping.handler.RegisterHandler" />
+	<var name="registerHandler" class="net.mk.onlieshopping.handler.RegisterHandler"/>
 
 	<!-- Returning and adding RegisterModel instance inside the flow -->
 	<on-start>
@@ -66,4 +64,5 @@
 		<transition on="home" to="home" validate="false" />
 		<transition on="personall" to="personal" validate="false" />
 	</global-transitions>
+
 </flow>
