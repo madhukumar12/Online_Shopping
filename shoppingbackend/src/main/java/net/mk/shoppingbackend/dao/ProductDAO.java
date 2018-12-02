@@ -6,19 +6,21 @@ import net.mk.shoppingbackend.dto.Product;
 
 public interface ProductDAO {
 
-	Product getProduct(int productId);
+	public Product getProduct(int productId);
 
-	List<Product> list();
+	public List<Product> list();
 
-	boolean add(Product product);
+	public boolean add(Product product);
 
-	boolean update(Product product);
+	public boolean update(Product product);
 
-	boolean delete(Product product);
-	
+	public boolean delete(Product product);
+
 	// business methods
 	List<Product> listActiveProducts();
+
 	List<Product> listActiveProductsByCategory(int categoryId);
+
 	List<Product> getLatestActiveProducts(int count);
 
 }

@@ -1,4 +1,4 @@
-package net.mk.onlieshopping.handler;
+package net.mk.onlineshopping.handler;
 
 
 import java.io.Serializable;
@@ -9,7 +9,7 @@ import org.springframework.binding.message.MessageContext;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
-import net.mk.onlieshopping.model.RegisterModel;
+import net.mk.onlineshopping.model.RegisterModel;
 import net.mk.shoppingbackend.dao.UserDAO;
 import net.mk.shoppingbackend.dto.Address;
 import net.mk.shoppingbackend.dto.Cart;

@@ -1,4 +1,4 @@
-package net.mk.onlieshopping.validator;
+package net.mk.onlineshopping.validator;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;

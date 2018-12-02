@@ -1,4 +1,4 @@
-package net.mk.onlieshopping.model;
+package net.mk.onlineshopping.model;
 
 import java.io.Serializable;
 

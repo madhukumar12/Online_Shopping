@@ -8,7 +8,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import net.mk.onlieshopping.model.UserModel;
+import net.mk.onlineshopping.model.UserModel;
 import net.mk.shoppingbackend.dao.UserDAO;
 import net.mk.shoppingbackend.dto.User;
 

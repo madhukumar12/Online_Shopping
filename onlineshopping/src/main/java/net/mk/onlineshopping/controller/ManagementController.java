@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import net.mk.onlieshopping.validator.ProductValidator;
 import net.mk.onlineshopping.util.FileUploadUtility;
+import net.mk.onlineshopping.validator.ProductValidator;
 import net.mk.shoppingbackend.dao.CategoryDAO;
 import net.mk.shoppingbackend.dao.ProductDAO;
 import net.mk.shoppingbackend.dto.Category;

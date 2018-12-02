@@ -6,7 +6,7 @@
 
 		<var name="user" class="net.mk.shoppingbackend.dto.User" />
 	<var name="billing" class="net.mk.shoppingbackend.dto.Address" />
-	<var name="registerHandler" class="net.mk.onlieshopping.handler.RegisterHandler"/>
+	<var name="registerHandler" class="net.mk.onlineshopping.handler.RegisterHandler"/>
 
 	<!-- Returning and adding RegisterModel instance inside the flow -->
 	<on-start>

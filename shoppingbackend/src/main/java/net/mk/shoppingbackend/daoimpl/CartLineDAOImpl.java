@@ -19,22 +19,40 @@ public class CartLineDAOImpl implements CartLineDAO {
 
 	@Override
 	public CartLine get(int id) {
-		return null;
+		return sessionFactory.getCurrentSession().get(CartLine.class, Integer.valueOf(id));
 	}
 
 	@Override
 	public boolean add(CartLine cartLine) {
-		return false;
+		try {
+			sessionFactory.getCurrentSession().persist(cartLine);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
 	public boolean update(CartLine cartLine) {
-		return false;
+		try {
+			sessionFactory.getCurrentSession().update(cartLine);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
 	public boolean delete(CartLine cartLine) {
-		return false;
+		try {
+			sessionFactory.getCurrentSession().remove(cartLine);
+			return true;
+		} catch (Exception e) {
+			e.printStackTrace();
+			return false;
+		}
 	}
 
 	@Override
@@ -53,18 +71,17 @@ public class CartLineDAOImpl implements CartLineDAO {
 
 	@Override
 	public CartLine getByCartAndProduct(int cartId, int productId) {
-		
+
 		try {
-		String query = "FROM CartLine WHERE cartId = :cartId AND product.id = :productId";
-		return sessionFactory.getCurrentSession().createQuery(query, CartLine.class).setParameter("cartId", cartId)
-				.setParameter("productId", productId).getSingleResult();
-		}catch (Exception ex) {
+			String query = "FROM CartLine WHERE cartId = :cartId AND product.id = :productId";
+			return sessionFactory.getCurrentSession().createQuery(query, CartLine.class).setParameter("cartId", cartId)
+					.setParameter("productId", productId).getSingleResult();
+		} catch (Exception ex) {
 			return null;
 		}
 	}
-	
-	
-	//This method is related to cart
+
+	// This method is related to cart
 	@Override
 	public boolean updateCart(Cart cart) {
 		try {
@@ -76,6 +93,5 @@ public class CartLineDAOImpl implements CartLineDAO {
 
 		}
 	}
-
 
 }
